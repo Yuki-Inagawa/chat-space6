@@ -1,0 +1,23 @@
+.chat-side{
+  width: 300px;
+  color: #ffffff;
+  font-weight: bold;
+  float: left;
+  a{
+    color: white;
+  }
+  @import "front-page/side-header";
+  @import "front-page/groups";
+}
+.chat-main{
+  width: calc(100vw - 300px);
+  float: left;
+  background-color: #fafafa;
+  @import "front-page/main-header";
+  @import "front-page/messages";
+  @import "front-page/form";
+}
+
+*{
+  box-sizing: border-box;
+}
