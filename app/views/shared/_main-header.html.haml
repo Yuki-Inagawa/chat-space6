@@ -1,0 +1,11 @@
+.main-header
+  .main-header__left-box
+    .main-header__left-box__current-group
+      = group.name
+    %ul.main-header__left-box__member-list
+      メンバー：
+      %li.main-header__left-box__member-list__member  
+        = group.group-user.name
+
+  %a{:href => ""}
+    .main-header__edit-btn Edit
