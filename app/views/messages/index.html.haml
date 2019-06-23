@@ -19,7 +19,7 @@
             .group__name
               = group.name
             .group__message
-              message はまだありません         
+              = group.show_last_message         
           
   .chat-main
     .main-header
@@ -32,17 +32,13 @@
       %a{:href => ""}
         .main-header__edit-btn Edit
     .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker  メンバー名
-          %p.message__upper-info__date  2019/06/19
-        .message__text   text
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        .input-box
+          = f.label :image, class: 'input-box__image' do
+            = fa_icon 'picture-o', class: 'fa-image'
+            = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
 
