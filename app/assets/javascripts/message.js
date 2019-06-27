@@ -1,6 +1,27 @@
 $(function(){
   function buildHTML(message){
-    var html = `<p>test</p>`
+    var html = `<div class = "message">
+    <div class = "message__upper-info">
+      <div class = "message__upper-info__talker">
+          ${message.user.name}
+      <div class = "message__upper-info__date">
+        ${message.created_at.strftime("%Y/%m/%d %H:%M")}
+      </div>
+      </div>
+    </div>
+    <div class = "message__text">
+      <% if message.content.present? %>
+        <p class = "lower-message__content">
+        ${message.content}
+        </p>
+      <% end %>
+      <% if message.image.present? %>
+        
+      <% end%>
+  
+    </div>
+  
+  </div>`
     return html;
   }
   $('#new_message').on('submit', function(e){
@@ -26,9 +47,5 @@ $(function(){
   })
 })
 
-// $(function(){
-//   $('#new_message').on('submit',function(){
-//     console.log ("test")
-//   })
-// })
+
 
