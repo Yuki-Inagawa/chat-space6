@@ -35,15 +35,17 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html)
-      $('#message_content').val('')
+      $('.messages').append(html);
+      $('#message_content').val('');
+      $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight},'fast');
+
+      return false;
     })
     .fail(function(){
       alert('error');
     })
   })
 })
-
 
 
 
