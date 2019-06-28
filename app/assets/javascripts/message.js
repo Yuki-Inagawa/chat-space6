@@ -1,24 +1,21 @@
 $(function(){
   function buildHTML(message){
+    var content = message.content ? `${message.content}` : "";
+    var image = message.image ? `<img src=${message.image}>` : "";
     var html = `<div class = "message">
     <div class = "message__upper-info">
       <div class = "message__upper-info__talker">
-          ${message.user.name}
+        ${message.user.name}
       <div class = "message__upper-info__date">
-        ${message.created_at.strftime("%Y/%m/%d %H:%M")}
+        ${message.created_at}
       </div>
       </div>
     </div>
     <div class = "message__text">
-      <% if message.content.present? %>
         <p class = "lower-message__content">
-        ${message.content}
+        ${content}
         </p>
-      <% end %>
-      <% if message.image.present? %>
-        
-      <% end%>
-  
+        ${image}
     </div>
   
   </div>`
@@ -46,6 +43,7 @@ $(function(){
     })
   })
 })
+
 
 
 
