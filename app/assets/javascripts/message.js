@@ -53,7 +53,6 @@ $(function(){
   var buildMessageHTML = function(message) {
     var content = message.content ? `${message.content}` : "";
     var image = message.image ? `<img src=${message.image}>` : "";
-    if (message.content && message.image) {
       
       var html = `<div class = "message" data-message-id=${message.id}>
       <div class = "message__upper-info">
@@ -72,39 +71,7 @@ $(function(){
       </div>
     
     </div>`
-    } else if (message.content) {
-      var html = `<div class = "message" data-message-id=${message.id}>
-      <div class = "message__upper-info">
-        <div class = "message__upper-info__talker">
-          ${message.name}
-        <div class = "message__upper-info__date">
-          ${message.created_at}
-        </div>
-        </div>
-      </div>
-      <div class = "message__text">
-          <p class = "lower-message__content">
-          ${content}
-          </p>
-      </div>
     
-    </div>`
-    } else if (message.image) {
-      var html = `<div class = "message" data-message-id=${message.id}>
-      <div class = "message__upper-info">
-        <div class = "message__upper-info__talker">
-          ${message.name}
-        <div class = "message__upper-info__date">
-          ${message.created_at}
-        </div>
-        </div>
-      </div>
-      <div class = "message__text">
-          ${image}
-      </div>
-    
-    </div>`
-    };
     return html;
   };
   
