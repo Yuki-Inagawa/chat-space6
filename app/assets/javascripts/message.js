@@ -119,7 +119,6 @@ $(function(){
         data: {last_id: last_message_id}
       })
       .done(function(messages) {
-        console.log("自動更新中")
       var insertHTML = '';
         messages.forEach(function(message){
           insertHTML =  buildMessageHTML(message);
@@ -129,7 +128,7 @@ $(function(){
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
       .fail(function() {
-        console.log('自動更新に失敗しました');
+        alert('error');
       });
     }
     };
