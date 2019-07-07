@@ -25,10 +25,6 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
       #chat-group-users
-        -# #chat-group-user-22.chat-group-user.clearfix
-        -#   %input{:name => "group[user_ids][]", :type => "hidden", :value => current_user.id, :id =>"group_user_ids"}/
-        -#   %p.chat-group-user__name #{current_user.name}
-          
         - @group.users.each do |user|
           .chat-group-user.clearfix{:id => "#{user.id}"} 
             %input{:name => "group[user_ids][]", :type => "hidden", :value => "#{user.id}", :id =>"group_user_ids"}/
@@ -39,9 +35,3 @@
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
-
-
-
-
-
-

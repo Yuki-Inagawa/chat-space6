@@ -67,7 +67,7 @@ $(function(){
 })
 
 $(function(){
-  $(document).on('click','#remove',function(){
+  $(document).on('click','.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn',function(){
     $(this).unwrap();
     $(this).prev().remove();
     $(this).remove();
