@@ -1,27 +1,28 @@
 # README
+＊概要
+グループ機能付きチャットアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*IPアドレス
+52.199.254.8
 
-Things you may want to cover:
+*実装した機能
+新規登録機能
+グループ内でのチャット機能
+複数人によるグループチャット機能
+チャット相手の検索機能
+チャットグループへのユーザー招待機能
+チャットの履歴表示機能
+画像送信機能
+チャットの自動更新
+https://i.gyazo.com/76672d37dc4f7645d9077e4953417f73.mp4
 
-* Ruby version
+* 開発環境
+ruby
+MySQL
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* データベース概要
 ## usersテーブル
 
 |Column|Type|Options|
